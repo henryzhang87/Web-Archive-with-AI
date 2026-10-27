@@ -1,6 +1,10 @@
 # 1. Web-Archive-with-AI
 
-To integrate AI tools with web-archive preservation, discovery and understanding.
+This project aims to apply AI tools to the field of web-archiving for the purposes of:
+
+- automating routine preservation workflows
+- facilitating seemless information discovery
+- enhancing deep content understanding within and across collections. 
 
 
 # 2. The Basics of LLM
