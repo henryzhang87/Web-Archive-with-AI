@@ -7,9 +7,18 @@ To integrate AI tools with web-archive preservation, discovery and understanding
 
 ## 2.1. Tokenization of Text
 
-Text tokenization strategies fall into three primary paradigms: **Word-level (Vocabulary-based)**, **Character-level (Alphabet-based)**, and **Subword-level**. Selecting among them involves balancing vocabulary size, sequence length, and computational efficiency across different natural languages.
+Text tokenization strategies fall into three primary paradigms: 
 
----
+- **Word-level (Vocabulary-based)**
+- **Character-level (Alphabet-based)**
+- **Subword-level**
+
+Which one to choose depends on the balance among different factors:
+
+- vocabulary size
+-  sequence length
+-  computational efficiency
+
 
 ## 2.1.1. Paradigm Comparison Matrix
 
