@@ -71,6 +71,16 @@ Comparative Matrix
 | **Transformer Context Efficiency** | Maximum space efficiency | **High efficiency** (0.91 words per token) | Extremely poor (5.5 times context consumption) |
 | **OOV / Splitting Behavior** | Treats entire words as single tokens; punctuation stays attached (e.g., `[create,]`, `[data.]`). | Standard words remain 1 token. Punctuation is separated (`[,]`, `[.]`). Suffixes split logically (e.g., `[research] + [er]`). | Every single character and space is assigned an individual token. |
 
+# 2. Popular Tokenziers for LLM
+
+| LLM Family | Tokenizer Algorithm / Framework | Vocabulary Size | Key Characteristic |
+|---|---|---|---|
+| **DeepSeek-V3 / R1** | Byte-Level BPE (BBPE) | **129,280** | Extended multi-lingual coverage with custom optimization for code, math, and Chinese character compression. |
+| **GPT-4o / GPT-4o-mini** | Byte-Pair Encoding (`o200k_base` / `tiktoken`) | ~200,000 | Native support for multi-lingual text, code, and non-Latin character efficiency. |
+| **Llama 3 / 3.1 / 3.3** | Byte-Pair Encoding (`tiktoken` format) | 128,256 | $4\times$ vocabulary expansion over Llama 2 (32k), greatly improving text compression and context efficiency. |
+| **Qwen 2.5** | Byte-Level BPE | 151,646 | Highly optimized for multi-lingual efficiency across Asian languages, code, and mathematics. |
+| **Gemma 2 (Google)** | SentencePiece (Unigram) | 256,000 | Massive vocabulary designed for strong global multi-lingual coverage and zero OOV fallback. |
+
 # 3. WARC-GPT
 
 ## 3.1. WARC-GPT Ingest
