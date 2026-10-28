@@ -70,3 +70,16 @@ Comparative Matrix
 | **Sequence Length Impact** | Lowest sequence length | Near-optimal sequence length | 5.5 times longer** sequence than subword |
 | **Transformer Context Efficiency** | Maximum space efficiency | **High efficiency** (0.91 words per token) | Extremely poor (5.5 times context consumption) |
 | **OOV / Splitting Behavior** | Treats entire words as single tokens; punctuation stays attached (e.g., `[create,]`, `[data.]`). | Standard words remain 1 token. Punctuation is separated (`[,]`, `[.]`). Suffixes split logically (e.g., `[research] + [er]`). | Every single character and space is assigned an individual token. |
+
+# 3. WARC-GPT
+
+## 3.1. WARC-GPT Ingest
+
+The pipeline of WARC-GPT can be presented as below:
+
+- Parsing and Text Extraction: This entails reading warc and warc.gz files, and extracting meaningful text from HTML and PDF files
+  contained inside warc/warc.gz files. This is I/O intensive. Faster storage media such as SSD, large RAM, and powerful CPU can help speedup the process, but GPU     doesn't help at this stage.
+
+- Text Chunking: The extracted text is divided into chunks. CPU and RAM determine its performance. GPU is not necessary
+
+- Generating Embeddings: large number of text chunks are processed to generate vector embeddings using local embedding models. GPU can provide massive performance    speedup. 
